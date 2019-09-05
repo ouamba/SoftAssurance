@@ -14,7 +14,7 @@ import javax.persistence.OneToOne;
 public class Assurance implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long codeAssurance;
+	private Long id;
 	private int durees;
 	private Date dateEffet;
 	private Date dateEmission;
@@ -41,7 +41,7 @@ public class Assurance implements Serializable{
 	}
 	public Assurance(int durees, Date dateEffet, Date dateEmission, Date dateExpiration, int etatDta, String dr,
 			String ipt, String ar, String b, String vol, String bdg, int icd, StockAttest stockattestations,
-			Vehicule vehicules, StockCr stockcr) {
+			Vehicule vehicule, StockCr stockcarterose) {
 		super();
 		this.durees = durees;
 		this.dateEffet = dateEffet;
@@ -56,14 +56,14 @@ public class Assurance implements Serializable{
 		this.bdg = bdg;
 		this.icd = icd;
 		this.stockattestations = stockattestations;
-		this.vehicule = vehicules;
-		this.stockcarterose = stockcr;
+		this.vehicule = vehicule;
+		this.stockcarterose = stockcarterose;
 	}
-	public Long getCodeAssurance() {
-		return codeAssurance;
+	public Long getId() {
+		return id;
 	}
-	public void setCodeAssurance(Long codeAssurance) {
-		this.codeAssurance = codeAssurance;
+	public void setId(Long id) {
+		this.id = id;
 	}
 	public int getDurees() {
 		return durees;
@@ -143,17 +143,17 @@ public class Assurance implements Serializable{
 	public void setStockattestations(StockAttest stockattestations) {
 		this.stockattestations = stockattestations;
 	}
-	public Vehicule getVehicules() {
+	public Vehicule getVehicule() {
 		return vehicule;
 	}
-	public void setVehicules(Vehicule vehicules) {
-		this.vehicule = vehicules;
+	public void setVehicule(Vehicule vehicule) {
+		this.vehicule = vehicule;
 	}
-	public StockCr getStockcr() {
+	public StockCr getStockcarterose() {
 		return stockcarterose;
 	}
-	public void setStockcr(StockCr stockcr) {
-		this.stockcarterose = stockcr;
+	public void setStockcarterose(StockCr stockcarterose) {
+		this.stockcarterose = stockcarterose;
 	}
 	
 }

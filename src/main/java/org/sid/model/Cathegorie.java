@@ -13,7 +13,7 @@ import javax.persistence.OneToMany;
 public class Cathegorie implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long codeCathegorie;
+	private Long id;
 	private String cat;
 	private String obs;
 	@OneToMany(mappedBy = "cathegorie", fetch = FetchType.LAZY)
@@ -24,17 +24,18 @@ public class Cathegorie implements Serializable {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Cathegorie(String cat, String obs, Collection<Vehicule> vehicules) {
+	public Cathegorie(String cat, String obs, Collection<Vehicule> vehicules, Collection<Tarification> tarifications) {
 		super();
 		this.cat = cat;
 		this.obs = obs;
 		this.vehicules = vehicules;
+		this.tarifications = tarifications;
 	}
-	public Long getCodeCathegorie() {
-		return codeCathegorie;
+	public Long getId() {
+		return id;
 	}
-	public void setCodeCathegorie(Long codeCathegorie) {
-		this.codeCathegorie = codeCathegorie;
+	public void setId(Long id) {
+		this.id = id;
 	}
 	public String getCat() {
 		return cat;
@@ -54,5 +55,12 @@ public class Cathegorie implements Serializable {
 	public void setVehicules(Collection<Vehicule> vehicules) {
 		this.vehicules = vehicules;
 	}
+	public Collection<Tarification> getTarifications() {
+		return tarifications;
+	}
+	public void setTarifications(Collection<Tarification> tarifications) {
+		this.tarifications = tarifications;
+	}
+	
 	
 }

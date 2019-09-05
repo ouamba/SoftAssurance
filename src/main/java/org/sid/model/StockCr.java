@@ -13,7 +13,7 @@ import javax.persistence.OneToOne;
 public class StockCr implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long codeStockCr;
+	private Long id;
 	private String cathegorie;
 	private int etat;
 	@OneToOne(mappedBy = "stockcarterose")
@@ -32,11 +32,11 @@ public class StockCr implements Serializable {
 		this.assurance = assurance;
 		this.partenaire = partenaire;
 	}
-	public Long getCodeStockCr() {
-		return codeStockCr;
+	public Long getId() {
+		return id;
 	}
-	public void setCodeStockCr(Long codeStockCr) {
-		this.codeStockCr = codeStockCr;
+	public void setId(Long id) {
+		this.id = id;
 	}
 	public String getCathegorie() {
 		return cathegorie;
@@ -62,5 +62,6 @@ public class StockCr implements Serializable {
 	public void setPartenaire(Partenaire partenaire) {
 		this.partenaire = partenaire;
 	}
+	
 	
 }

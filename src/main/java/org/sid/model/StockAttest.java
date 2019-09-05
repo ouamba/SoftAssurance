@@ -16,7 +16,7 @@ import javax.persistence.OneToOne;
 public class StockAttest implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long codeStockAttest;
+	private Long id;
 	private String attestation;
 	private int etat;
 	@OneToOne
@@ -36,11 +36,11 @@ public class StockAttest implements Serializable{
 		this.assurances = assurances;
 		this.partenaire = partenaire;
 	}
-	public Long getCodeStockAttest() {
-		return codeStockAttest;
+	public Long getId() {
+		return id;
 	}
-	public void setCodeStockAttest(Long codeStockAttest) {
-		this.codeStockAttest = codeStockAttest;
+	public void setId(Long id) {
+		this.id = id;
 	}
 	public String getAttestation() {
 		return attestation;
@@ -66,6 +66,5 @@ public class StockAttest implements Serializable{
 	public void setPartenaire(Partenaire partenaire) {
 		this.partenaire = partenaire;
 	}
-	
 	
 }

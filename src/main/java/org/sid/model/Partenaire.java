@@ -16,13 +16,13 @@ import javax.persistence.OneToOne;
 public class Partenaire implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long codePartenaire;
+	private Long id;
 	private String nom;
 	private String prenom;
 	private String ville;
 	private int numeroCni;
 	private int telephone;
-	private char motDePasse;
+	private String motDePasse;
 	@OneToMany(mappedBy = "partenaire", fetch = FetchType.LAZY,cascade=CascadeType.ALL)
 	private Collection<StockAttest> stockattestations;
 	@OneToMany(mappedBy = "partenaire", fetch = FetchType.LAZY,cascade=CascadeType.ALL)
@@ -34,9 +34,10 @@ public class Partenaire implements Serializable{
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Partenaire(String nom, String prenom, String ville, int numeroCni, int telephone, char motDePasse,
+	public Partenaire(Long id, String nom, String prenom, String ville, int numeroCni, int telephone, String motDePasse,
 			Collection<StockAttest> stockattestations, Collection<StockCr> stockcarteroses, AppUser appuser) {
 		super();
+		this.id = id;
 		this.nom = nom;
 		this.prenom = prenom;
 		this.ville = ville;
@@ -47,11 +48,11 @@ public class Partenaire implements Serializable{
 		this.stockcarteroses = stockcarteroses;
 		this.appuser = appuser;
 	}
-	public Long getCodePartenaire() {
-		return codePartenaire;
+	public Long getId() {
+		return id;
 	}
-	public void setCodePartenaire(Long codePartenaire) {
-		this.codePartenaire = codePartenaire;
+	public void setId(Long id) {
+		this.id = id;
 	}
 	public String getNom() {
 		return nom;
@@ -83,10 +84,10 @@ public class Partenaire implements Serializable{
 	public void setTelephone(int telephone) {
 		this.telephone = telephone;
 	}
-	public char getMotDePasse() {
+	public String getMotDePasse() {
 		return motDePasse;
 	}
-	public void setMotDePasse(char motDePasse) {
+	public void setMotDePasse(String motDePasse) {
 		this.motDePasse = motDePasse;
 	}
 	public Collection<StockAttest> getStockattestations() {
@@ -107,5 +108,6 @@ public class Partenaire implements Serializable{
 	public void setAppuser(AppUser appuser) {
 		this.appuser = appuser;
 	}
+	
 	
 }

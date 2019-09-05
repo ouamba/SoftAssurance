@@ -17,7 +17,7 @@ import javax.persistence.OneToOne;
 public class Vehicule implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long codeVehicule;
+	private Long id;
 	private Date datePmc;
 	private String immatriculation;
 	private String chassis;
@@ -62,11 +62,11 @@ public class Vehicule implements Serializable{
 		this.client = client;
 		this.cathegorie = cathegorie;
 	}
-	public Long getCodeVehicule() {
-		return codeVehicule;
+	public Long getId() {
+		return id;
 	}
-	public void setCodeVehicule(Long codeVehicule) {
-		this.codeVehicule = codeVehicule;
+	public void setId(Long id) {
+		this.id = id;
 	}
 	public Date getDatePmc() {
 		return datePmc;
@@ -146,9 +146,10 @@ public class Vehicule implements Serializable{
 	public void setAssurances(Collection<Assurance> assurances) {
 		this.assurances = assurances;
 	}
-	public Client getClient() {
-		return client;
-	}
+
+	/*
+	 * public Client getClient() { return client; }
+	 */
 	public void setClient(Client client) {
 		this.client = client;
 	}

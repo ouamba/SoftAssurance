@@ -13,7 +13,7 @@ import javax.persistence.OneToOne;
 public class Tarification implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long codeTarification;
+	private Long id;
 	private String se;
 	private int tarif;
 	private int puisMin;
@@ -36,19 +36,19 @@ public class Tarification implements Serializable{
 		this.se = se;
 		this.tarif = tarif;
 		this.puisMin = puisMin;
-		this.PuisMax = puisMax;
+		PuisMax = puisMax;
 		this.tarifAvecRemoque = tarifAvecRemoque;
 		this.tarifB = tarifB;
 		this.tarifC = tarifC;
 		this.tarifBavecR = tarifBavecR;
 		this.tarifCavecR = tarifCavecR;
-		this.Cathegorie = cathegorie;
+		Cathegorie = cathegorie;
 	}
-	public Long getCodeTarification() {
-		return codeTarification;
+	public Long getId() {
+		return id;
 	}
-	public void setCodeTarification(Long codeTarification) {
-		this.codeTarification = codeTarification;
+	public void setId(Long id) {
+		this.id = id;
 	}
 	public String getSe() {
 		return se;
@@ -110,5 +110,6 @@ public class Tarification implements Serializable{
 	public void setCathegorie(Cathegorie cathegorie) {
 		Cathegorie = cathegorie;
 	}
+	
 	
 }

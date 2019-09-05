@@ -13,7 +13,7 @@ import javax.persistence.OneToMany;
 public class Zone implements Serializable{
 	@Id 
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long codeZone;
+	private Long id;
 	private String zone;
 	private String ville;
 	@OneToMany(mappedBy="zone",fetch = FetchType.LAZY)
@@ -22,17 +22,18 @@ public class Zone implements Serializable{
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Zone(String zone, String ville, Collection<Client> clients) {
+	public Zone(Long id, String zone, String ville, Collection<Client> clients) {
 		super();
+		this.id = id;
 		this.zone = zone;
 		this.ville = ville;
 		this.clients = clients;
 	}
-	public Long getCodeZone() {
-		return codeZone;
+	public Long getId() {
+		return id;
 	}
-	public void setCodeZone(Long codeZone) {
-		this.codeZone = codeZone;
+	public void setId(Long id) {
+		this.id = id;
 	}
 	public String getZone() {
 		return zone;
@@ -46,11 +47,13 @@ public class Zone implements Serializable{
 	public void setVille(String ville) {
 		this.ville = ville;
 	}
-	public Collection<Client> getClients() {
-		return clients;
-	}
+
+	/*
+	 * public Collection<Client> getClients() { return clients; }
+	 */
 	public void setClients(Collection<Client> clients) {
 		this.clients = clients;
 	}
+	
 	
 }
